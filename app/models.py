@@ -1,11 +1,17 @@
 class Sources:
+    '''
+    Function to create news sources
+    '''
     def __init__(self, name, description, url):
         self.name=name,
         self.description=description
         self.url=url
         
+        
 class Articles:
-    '''Define article model'''
+    '''
+    Function to create news articles
+    '''
     def __init__(self, source, author, title, description, url, urlToImage, publishedAt):
         self.source = source
         self.author = author

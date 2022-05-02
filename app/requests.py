@@ -45,18 +45,16 @@ def process_results(sources_list):
         name=source.get('name')
         description=source.get('description')
         url=source.get('url')
-        country=source.get('country')
-        language=source.get('language')
 
         if name!=('ANSA.it'):
-            source_object=Sources(id,name,description,url,country,language)
+            source_object=Sources(id,name,description,url)
 
             source_results.append(source_object)
     return source_results
-    
 
-def get_Articles(domain):
-    articles_url=base_url_for_everything.format(domain,api_key)
+
+def get_articles(sources):
+    articles_url=base_source_list.format(sources,api_key)
     with urllib.request.urlopen(articles_url) as url:
         articles_url_data=url.read()
         articles_url_response=json.loads(articles_url_data)
@@ -78,18 +76,15 @@ def process_article_results(article_result_list):
     article_results=[]
     if article_result_list:
         for article in article_result_list:
-            source=article.get('source')
-            author=article.get('author')
             title=article.get('title')
             description=article.get('description')
             url=article.get('url')
             urlToImage=article.get('urlToImage')
             publishedAt=article.get('publishedAt')
-            content=article.get('content')
 
 
             if urlToImage:
-                article_object=Articles(source,author,title,description,url,urlToImage,publishedAt,content)
+                article_object=Articles(title,description,url,urlToImage,publishedAt)
                 article_results.append(article_object)
         return article_results
     else:

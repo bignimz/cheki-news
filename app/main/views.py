@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from ..requests import get_articles, get_articles_sos, get_headlines, get_sources
+from ..requests import get_articles, get_headlines, get_sources
 from . import main
 
 
@@ -8,9 +8,20 @@ def index():
 
     sources = get_sources()
     
-    articles = get_articles('bbc-news')
+    # articles = get_articles('cnn')
     
-    return render_template('index.html',articles=articles)
+    return render_template('index.html',articles=sources)
+
+
+# @main.route('/bbc')
+# def bbc():
+
+#     # sources = get_sources()
+
+#     articles = get_articles('bbc')
+
+#     return render_template('bbc.html', articles=articles)
+
 
 
 @main.route('/articles')
@@ -24,9 +35,10 @@ def articles():
 @main.route('/sources')
 def source():
     
-    sources=get_sources()
+    sources = get_sources()
+    articles = get_articles('cnn')
    
-    return render_template('sources.html',articles=sources)
+    return render_template('sources.html',articles=articles)
 
 
 @main.route('/top-headlines')
@@ -34,7 +46,6 @@ def headlines():
    
     articles=get_headlines()
     
-    # return render_template('articles.html',articles=articles)
     return render_template('articles.html',articles=articles)
 
 

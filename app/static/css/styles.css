@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+:root {
+      --title-font: font-family: 'Playfair Display', serif;
+}
+
+.logo-link {
+      text-decoration: none;
+      color: white;
+}
+
+.logo-link:hover {
+      color: white;
+}
+
+
+.cheki-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+}
+
+marquee {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+}
+
+.cheki-heading {
+      background-color: #e7e7e7;
+      border-left: 5px solid red;
+}
+
+.cheki-heading h2 {
+      font-size: 20px;
+      font-weight: 500;
+}
+
+.cheki-link {
+      text-decoration: none;
+      color: #333;
+}

@@ -25,15 +25,12 @@ def get_sources():
         sources_url_data=url.read()
         sources_url_response=json.loads(sources_url_data)
 
-
         source_results=None
-
 
         if sources_url_response['sources']:
             print("availabel")
             source_results_list=sources_url_response['sources']
             source_results=process_results(source_results_list)
-
 
     return source_results
 
@@ -89,6 +86,8 @@ def process_article_results(article_result_list):
         return article_results
     else:
         return '<h1>nothing to display</h1>'
+
+        
 def get_headlines():
     articles_url=base_url_top_headlines.format(api_key)
     with urllib.request.urlopen(articles_url) as url:

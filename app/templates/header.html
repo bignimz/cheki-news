@@ -1,0 +1,99 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-danger"
+  aria-label="Tenth navbar example"
+>
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarsExample08"
+      aria-controls="navbarsExample08"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse justify-content-md-center"
+      id="navbarsExample08"
+    >
+      <ul class="navbar-nav text-transform-uppercase">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="{{ url_for('main.index') }}"
+          >
+            Latest News</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">World News</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="dropdown08"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >News Categories</a
+          >
+          <ul class="dropdown-menu" aria-labelledby="dropdown08">
+            <li><a class="dropdown-item" href="#">Business</a></li>
+            <li><a class="dropdown-item" href="#">Technology</a></li>
+            <li><a class="dropdown-item" href="#">Science</a></li>
+            <li><a class="dropdown-item" href="#">Entertainement</a></li>
+            <li><a class="dropdown-item" href="#">Sports</a></li>
+            <li>
+              <a class="dropdown-item" href="#">Health</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="dropdown08"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >News Sources</a
+          >
+          <ul class="dropdown-menu" aria-labelledby="dropdown08">
+            <li><a class="dropdown-item" href="#">BBC News</a></li>
+            <li><a class="dropdown-item" href="#">ABC News</a></li>
+            <li><a class="dropdown-item" href="{{url_for("main.source")}}">CNN</a></li>
+            <li><a class="dropdown-item" href="#">AL-JAZEERA</a></li>
+            <li><a class="dropdown-item" href="#">CBN News</a></li>
+            <li>
+              <a class="dropdown-item" href="#">DW</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="bg-black text-white py-4">
+  <a class="logo-link" href="{{url_for('main.index')}}">
+    <h1 class="text-center text-uppercase cheki-title">Cheki News</h1>
+  </a>
+  <p class="lead text-center text-uppercase ls-3 cheki-subtitle">
+    Fresh News On the Go
+  </p>
+</div>
+
+<!-- Scrolling Macquee -->
+<div class="bg-danger text-white py-2 px-2">
+  <marquee direction="left"
+    >Justice Samuel Alito's draft opinion that would overturn Roe v. Wade
+    published Monday night..., CNN's Laura Coates predicts the socioeconomic
+    impact that a draft majority opinion, obtained by..., Russian President
+    Vladimir Putin could formally declare war on Ukraine as soon as May 9, a
+    move...
+  </marquee>
+</div>

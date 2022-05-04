@@ -1,0 +1,18 @@
+<!-- Template Inheritance -->
+{% extends 'layout.html' %} {% import "macros.html" as macro %}
+
+<!-- Styles block -->
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" />
+{% endblock %}
+
+<!-- Block body content -->
+{% block content %}
+
+<div class="container">
+  {% block heading %}CNN Top Headlines{% endblock %} {% block body %}
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    {{macro.displaySources(sources)}}
+  </div>
+</div>
+{% endblock %} {% endblock %}

@@ -61,7 +61,6 @@ def get_articles(sources):
 
 
         if articles_url_response['articles']:
-            print("available")
             articles_results_list=articles_url_response['articles']
             articles_results=process_article_results(articles_results_list)
 
@@ -69,10 +68,10 @@ def get_articles(sources):
     return articles_results
 
 
-def process_article_results(article_result_list):
+def process_article_results(articles_results_list):
     article_results=[]
     if article_result_list:
-        for article in article_result_list:
+        for article in articles_results_list:
             title=article.get('title')
             description=article.get('description')
             url=article.get('url')
@@ -106,22 +105,3 @@ def get_headlines():
 
     return headlines_results
 
-
-def get_articles_sos(source):
-    articles_url=base_source_list.format(source,api_key)
-    with urllib.request.urlopen(articles_url) as url:
-        articles_url_data=url.read()
-        articles_url_response=json.loads(articles_url_data)
-
-
-        articles_results=None
-
-
-        if articles_url_response['articles']:
-            print("available")
-            articles_results_list=articles_url_response['articles']
-            articles_results=process_article_results(articles_results_list)
-        else:
-            articles_results=process_article_results(articles_results)
-
-    return articles_results

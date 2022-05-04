@@ -13,14 +13,16 @@ def index():
     return render_template('index.html',articles=sources)
 
 
-# @main.route('/bbc')
-# def bbc():
+@main.route('/bbc')
+def bbc():
 
-#     # sources = get_sources()
+    # sources = get_sources()
 
-#     articles = get_articles('bbc')
+    # name = 'bbc'
+    news = get_articles('bbc')
+    sources = get_sources()
 
-#     return render_template('bbc.html', articles=articles)
+    return render_template('bbc.html', name = name, news = news, sources = sources)
 
 
 
